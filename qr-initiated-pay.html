@@ -22,6 +22,7 @@ body {
 <script>
 
 const preview = document.getElementById('preview');
+const detector = new BarcodeDetector();
 
 navigator.mediaDevices.getUserMedia({
     audio: false,
@@ -34,6 +35,12 @@ navigator.mediaDevices.getUserMedia({
   .then(stream => {
     preview.srcObject = stream;
   });
+
+setInterval(() => {
+  detector.detect(preview).then(data => {
+    console.log(data);
+  });
+}, 1000);
 
 </script>
 </body>
