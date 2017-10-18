@@ -38,9 +38,12 @@ navigator.mediaDevices.getUserMedia({
 
 setInterval(() => {
   detector.detect(preview).then(data => {
-    console.log(data);
+    if (data.length == 0) return;
+
+    let decodedData = JSON.parse(data[0].rawValue);
+    (new PaymentRequest(decodedData.methodData, decodedData.details)).show();
   });
-}, 1000);
+}, 500);
 
 </script>
 </body>
