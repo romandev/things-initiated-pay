@@ -5,7 +5,6 @@ This is an experimental demo to proof of concept of things-initiated-payment suc
 ## QR-code initiated payment
 ### Requirement
 - You need a chromium based browser(including chrome) on Android.
-- You should enable ```--experimental-web-platform-features``` flag. You can enable it in chrome://flags.
 
 ### Testing
 - Run your browser on Android.
